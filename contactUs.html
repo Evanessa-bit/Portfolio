@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="../Portfolio/stlye.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="../Portfolio/script.js"></script>
     </head>
     <body>
           <header>
@@ -25,22 +27,38 @@
           
           </section>
         <h1>Contact Us</h1>
-        <form>
+        <form action="https://formspree.io/f/xbjnqzlr"
+        method="POST" onsubmit="formValidation(event)">
             <fieldset>
                 <legend>Enter Information</legend>
                 <p>
-                    <label>Name:</label>
-                    <input type ="text" id="myText" value="text here"/>
-                    <label>Surname:</label>
-                    <input type ="text" id="myText" value="text here"/>
+                    <label>Name:
+                        <input type ="text" id="formName"/> 
+                        <span class="hidden" id="name-span">Name is invalid</span> 
+                    </label>
+                                    
+                </p>
+                <p> <label>Surname:
+                    <input type ="text" id="formSurname"/>
+                    <span class="hidden" id="surname-span">Surname is invalid</span>
+                </label>
+                    
+                </p>
+                <p>
+                    <label>Email:
+                    <input type ="email" id="formEmail"/>
+                    <span class="hidden" id="email-span">Email is invalid</span>
+                    </label>
+                    
                 </p>
                 <p>
                     
                     <p>
-                    <label>Message:</label>
-                    <textarea id="myTextArea" rows="3" cols="80">
-                        your text here
-                    </textarea>
+                    <label>Message:
+                        <textarea id="formMessage" rows="10" cols="80">                        
+                        </textarea>
+                        <span class="hidden" id="message-span">Message is invalid</span>
+                    </label>
                     
                     <a href="mailto:vmthimkulu13@gmail.com"><input type ="button" id="myButton" value="Send"/></a>
                 </p>               
@@ -52,7 +70,7 @@
         <footer id="Footer">
             <section id="FlexArea">
                 <section id="first">
-                    <p>
+                    <p id="address">
                         9053 Grassbird Street<br>
                         Emaphupheni<br>
                         Benoni<br>
